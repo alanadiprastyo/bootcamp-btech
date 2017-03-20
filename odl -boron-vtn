@@ -1,0 +1,21 @@
+###### Installation Opendaylight ######
+apt-get update
+apt-get install openjdk-8-jdk maven
+
+#install mininet 
+apt-get install mininet
+
+#download opendaylight Boron
+cd ~
+wget http://10.1.1.250/distro/opendaylight/distribution-karaf-0.5.2-Boron-SR2.tar.gz
+tar zxvf distribution-karaf-0.5.2-Boron-SR2.tar.gz
+#buat screen untuk odl
+screen -R odl
+distribution-karaf-0.5.2-Boron-SR2/bin/karaf
+#install fitur opendaylight
+feature:install odl-dlux-all odl-l2switch-all
+
+#untuk keluar dari screen Ctrl A+D
+
+#buat screen untuk mininet
+screen -R mininet
